@@ -3,14 +3,18 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to thar's documentation!
+17THAR
 ================================
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Přednášky:
 
-   feature-a.md
+   prednaska_19092022.md
 
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Cvičení:
 
 
