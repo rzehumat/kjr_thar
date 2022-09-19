@@ -37,6 +37,66 @@ Dále je potřeba dodat
 ### Dvoufázové proudění
 
 ```{math}
-\frac{\partial}{\partial \tau}(\rho_\ell (1-<\alpha>)) + \frac{\partial}{\partial x_i}
+\frac{\partial}{\partial \tau}(\rho_\ell (1-<\alpha>)) + \frac{\partial}{\partial x_i}\left(\rho_\ell w_{\ell,i}(1-<\alpha>)\right) &= \Gamma_\ell \\
+\frac{\partial}{\partial \tau}(\rho_v <\alpha>) + \frac{\partial}{\partial x_i}\left(\rho_v w_{v,i}<\alpha>\right) &= \Gamma_v \\
+TODO
 
 ```
+
+- je potřeba více vztahů -- např. konstitutivní vztahy pro výpočet členů {math}`\Gamma`
+
+## Problémy s řešením proudění v praxi
+- výpočetní prostředky jsou omezené
+  - vztahy je potřeba zjednodušovat (k dosažení rozumné výpočetní náročnosti)
+  - typicky se balancuje rychlost výpočtu proti přesnosti (a realističnosti)
+- je potřeba zvolit vhodnou metodu
+
+### Aspekty ovlivňující výběr výpočetní metody
+- geometrie problému
+- probíhající fyzikální jevy
+  - proudění - jednofázové x vícefázové
+  - fázové přeměny
+  - chemické reakce
+  - rychlost změn - velikost časového kroku musí být dostatečně malá
+- požadovaná přesnost
+- nároky na HW a rychlost výpočtu
+  - souvisí s aplikací 
+    - můžeme si dovolit čekat (např. bezpečnostní analýzy), nebo ne (on-line modelování)
+    - počet opakování - jen 1 výpočet, nebo více (např. při optimalizaci)
+<!-- (What is the correct word for 'předpoklady') -->
+- předpoklady výpočtu
+  - konzervativní nebo best-estimate?
+
+### Příklady metod -- výpočet aktivní zóny
+- kanálová zóna -- k příčnému mísení nedochází (RBMK, GCR,...) - lze aproximovat 1D výpočtem
+- kazetové palivové soubory s obálkou (např. BWR, VVER-440,...) - přetoky mezi PS nejsou, ale chceme uvažovat přenos energie
+  - subkanálová analýza funguje dobře
+- příčné přetoky existují (např. VVER-1000) - složitější
+
+## Metody řešení 
+- CFD
+  - univerzální, široce rozšířené v praxi
+  - nejblíže skutečnému řešení, ale typicky používá zjednodušené modely (např. RANS, LES v modelování turbulence)
+  - velká náročnost na výpočetní prostředky
+  - Př: ANSYS Fluent, Siemens StarCCM+, OpenFOAM,...
+- subkanálová analýza
+  - předpoklad: proudění v axiálním směru je dominantní, ale existují příčné přetoky
+    - rovnice se přepíší do 1D tvaru s členy pro příčné přetoky
+    - "mezi 1D a 2D"
+  - potřebuje více konstitutivních vztahů
+  - dnes používané jen ve výpočtech aktivních zón
+  - Př: Cobra, Altham, Subchanflow
+- metoda náhradního média
+  - původní složitá geometrie se nahradí jednodušší "náhradní" úlohou
+- systémové (integrální) kódy
+  - rovnice jsou integrované přes objem, výpočetní oblast se "nodalizuje" 
+  - časté v havarijních analýzách
+  - typicky vhodné i pro velké oblasti jako celá smyčka nebo celý primární okruh
+  - při velkém množství nodů je srovnatelné se subkanálovou analýzou či dokonce s CFD
+  - Př: RELAP, ATHLET, MELCOR, TRACE
+- metoda izolovaného kanálu
+- code coupling
+  - spojování více různých kódů do složitějších celků
+  - specifické pro daný typ úlohy
+  - časté pro propojení termohydraulických a neutronických výpočtů
+  - Př: RELAP + neutronika, ATHLET + neutronika, DYN3D, TRACE + PARCS, OpenFOAM + Serpent,...
