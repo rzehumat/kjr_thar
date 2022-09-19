@@ -59,7 +59,9 @@ html_theme = 'sphinx_rtd_theme'
 html_context = {
     "display_github": True,
     "github_user": "rzehumat",
-    "github_repo": "kjr_thar"
+    "github_repo": "kjr_thar",
+    "github_version": "master",
+    "conf_py_path": "/"
 }
 
 # Add any paths that contain custom static files (such as style sheets) here,
