@@ -10,10 +10,12 @@
 ### Proudění
 - chceme: {math}`p(x, t)`, {math}`w(x, t)`, {math}`h(x, t)` --> 5 neznámých
 
-- tedy potřebujeme 5 rovnic
+- tedy potřebujeme 5 rovnic (níže jsou rovnice kontinuity, Navier-Stokesovy rovnice -- ve formulaci pro stlačitelné Newtonovské tekutiny a zákon zachování energie)
 
 ```{math}
     \frac{\partial \rho}{\partial \tau} + \frac{\partial (\rho w_i)}{\partial x_i} &= 0 \\
     \frac{\partial (\rho w_i)}{\partial \tau} + \frac{\partial w_i}{\partial x_j}(\rho w_j) &= \rho K_i - \frac{\partial p}{\partial x_i} + \frac{\tau_{ij}}{\partial x_j} \\
-    \frac{\partial \tau_{ij}}{\partial x_j} &= \frac{\partial}{\partial x_j}\left[\eta(\frac{\partial w_i}{\partial x_j})\right]
+    \frac{\partial \tau_{ij}}{\partial x_j} &= \frac{\partial}{\partial x_j}\left[\eta\left(\frac{\partial w_i}{\partial x_j} + \frac{\partial w_j}{\partial x_i} - \frac{2}{3}\delta_{ij}\frac{\partial w_k}{\partial x_k}\right) + \xi \delta_{ij}\frac{\partial w_k}{\partial x_k}\right] \\
+    \frac{\partial (\rho h)}{\partial \tau} + \frac{\partial (\rho h w_j)}{\partial x_j} &= \frac{\partial p}{\partial \tau} + w_j \frac{\partial p}{\partial x_j} + \frac{\partial}{\partial x_i}\left(\lambda \frac{\partial T}{\partial x_i}\right) + \tau_{ij} \frac{\partial w_i}{\partial x_j} + K_i \rho w_i + q_V - \frac{\partial q_{r,i}}{\partial x_j}
+
 ```
