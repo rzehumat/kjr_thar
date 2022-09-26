@@ -8,6 +8,12 @@
 
 .. toctree::
    :maxdepth: 2
+   :caption: PDF verze:
+
+   pdf_link.md
+
+.. toctree::
+   :maxdepth: 2
    :caption: Přednášky:
 
    prednaska_19092022.md
