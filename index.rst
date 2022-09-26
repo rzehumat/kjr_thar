@@ -17,6 +17,7 @@
    :caption: Přednášky:
 
    prednaska_19092022.md
+   prednaska_23092022.md
 
 
 .. toctree::
