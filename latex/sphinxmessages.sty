@@ -1,0 +1,21 @@
+%
+% sphinxmessages.sty
+%
+% message resources for Sphinx
+%
+\ProvidesPackage{sphinxmessages}[2019/01/04 v2.0 Localized LaTeX macros (Sphinx team)]
+
+\renewcommand{\literalblockcontinuedname}{pokračujte na předchozí stránce}
+\renewcommand{\literalblockcontinuesname}{continues on next page}
+\renewcommand{\sphinxnonalphabeticalgroupname}{Non\sphinxhyphen{}alphabetical}
+\renewcommand{\sphinxsymbolsname}{Symboly}
+\renewcommand{\sphinxnumbersname}{Numbers}
+\def\pageautorefname{page}
+
+\addto\captionsczech{\renewcommand{\figurename}{Obr.\@{} }}
+\def\fnum@figure{\figurename\thefigure{}}
+
+\addto\captionsczech{\renewcommand{\tablename}{Tabulka }}
+\def\fnum@table{\tablename\thetable{}}
+
+\addto\captionsczech{\renewcommand{\literalblockname}{Výpis}}

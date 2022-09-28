@@ -1,0 +1,23 @@
+\babel@toc {nil}{}
+\contentsline {chapter}{\numberline {1}PDF verze}{1}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Úvod}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Obsah a cíle předmětu}{3}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Teorie k proudění a sdílení tepla (opakování)}{3}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Proudění \textendash {} jednofázové}{3}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Dvoufázové proudění}{4}{subsection.2.2.2}%
+\contentsline {section}{\numberline {2.3}Problémy s řešením proudění v praxi}{4}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Aspekty ovlivňující výběr výpočetní metody}{4}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Příklady metod \textendash {} výpočet aktivní zóny}{5}{subsection.2.3.2}%
+\contentsline {section}{\numberline {2.4}Metody řešení}{5}{section.2.4}%
+\contentsline {chapter}{\numberline {3}CFD}{7}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Principy modelování}{7}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Postup}{7}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Chyby}{8}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Tvorba geometrie}{9}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Přístupy ke geometrii}{10}{subsection.3.4.1}%
+\contentsline {section}{\numberline {3.5}Diskretizace geometrie}{10}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Prvky}{10}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Požadavky na síť}{11}{subsection.3.5.2}%
+\contentsline {subsection}{\numberline {3.5.3}Typy sítí}{11}{subsection.3.5.3}%
+\contentsline {subsection}{\numberline {3.5.4}Posuzování kvality sítě}{11}{subsection.3.5.4}%
+\contentsline {chapter}{\numberline {4}Instalace balíku ANSYS Fluent}{13}{chapter.4}%

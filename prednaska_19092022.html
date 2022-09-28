@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="cs" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Úvod &mdash; Dokumentace pro thar 0.1</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/dark_mode_css/general.css" type="text/css" />
+      <link rel="stylesheet" href="_static/dark_mode_css/dark.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/translations.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="_static/dark_mode_js/default_light.js"></script>
+        <script src="_static/dark_mode_js/theme_switcher.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Rejstřík" href="genindex.html" />
+    <link rel="search" title="Vyhledávání" href="search.html" />
+    <link rel="next" title="CFD" href="prednaska_23092022.html" />
+    <link rel="prev" title="PDF verze" href="pdf_link.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> thar
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">PDF verze:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pdf_link.html">PDF verze</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Přednášky:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Úvod</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#obsah-a-cile-predmetu">Obsah a cíle předmětu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#teorie-k-proudeni-a-sdileni-tepla-opakovani">Teorie k proudění a sdílení tepla (opakování)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#proudeni-jednofazove">Proudění – jednofázové</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dvoufazove-proudeni">Dvoufázové proudění</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#problemy-s-resenim-proudeni-v-praxi">Problémy s řešením proudění v praxi</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#aspekty-ovlivnujici-vyber-vypocetni-metody">Aspekty ovlivňující výběr výpočetní metody</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#priklady-metod-vypocet-aktivni-zony">Příklady metod – výpočet aktivní zóny</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#metody-reseni">Metody řešení</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="prednaska_23092022.html">CFD</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Cvičení:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="instalace_fluentu.html">Instalace balíku ANSYS Fluent</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">thar</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Úvod</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/rzehumat/kjr_thar/blob/master/prednaska_19092022.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="uvod">
+<h1>Úvod<a class="headerlink" href="#uvod" title="Permalink to this heading"></a></h1>
+<section id="obsah-a-cile-predmetu">
+<h2>Obsah a cíle předmětu<a class="headerlink" href="#obsah-a-cile-predmetu" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>praktická aplikace výpočetních kódů v termohydraulice – zejména CFD a subkanálová analýza</p></li>
+</ul>
+</section>
+<section id="teorie-k-proudeni-a-sdileni-tepla-opakovani">
+<h2>Teorie k proudění a sdílení tepla (opakování)<a class="headerlink" href="#teorie-k-proudeni-a-sdileni-tepla-opakovani" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>více info viz THNJ2, 3</p></li>
+</ul>
+<section id="proudeni-jednofazove">
+<h3>Proudění – jednofázové<a class="headerlink" href="#proudeni-jednofazove" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p>chceme: <span class="math notranslate nohighlight">\(p(x, t)\)</span>, <span class="math notranslate nohighlight">\(w(x, t)\)</span>, <span class="math notranslate nohighlight">\(h(x, t)\)</span> –&gt; 5 neznámých</p></li>
+<li><p>tedy potřebujeme 5 rovnic (níže jsou rovnice kontinuity, Navier-Stokesovy rovnice – ve formulaci pro stlačitelné Newtonovské tekutiny a zákon zachování energie)</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \frac{\partial \rho}{\partial \tau} + \frac{\partial (\rho w_i)}{\partial x_i} &amp;= 0 \\
+    \frac{\partial (\rho w_i)}{\partial \tau} + \frac{\partial w_i}{\partial x_j}(\rho w_j) &amp;= \rho K_i - \frac{\partial p}{\partial x_i} + \frac{\tau_{ij}}{\partial x_j} \\
+    \frac{\partial (\rho h)}{\partial \tau} + \frac{\partial (\rho h w_j)}{\partial x_j} &amp;= \frac{\partial p}{\partial \tau} + w_j \frac{\partial p}{\partial x_j} + \frac{\partial}{\partial x_i}\left(\lambda \frac{\partial T}{\partial x_i}\right) + \tau_{ij} \frac{\partial w_i}{\partial x_j} + K_i \rho w_i + q_V - \frac{\partial q_{r,i}}{\partial x_j}
+\end{split}\]</div>
+<p>kde</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \frac{\partial \tau_{ij}}{\partial x_j} &amp;= \frac{\partial}{\partial x_j}\left[\eta\left(\frac{\partial w_i}{\partial x_j} + \frac{\partial w_j}{\partial x_i} - \frac{2}{3}\delta_{ij}\frac{\partial w_k}{\partial x_k}\right) + \xi \delta_{ij}\frac{\partial w_k}{\partial x_k}\right] \\\end{split}\]</div>
+<p>Dále je potřeba dodat</p>
+<ul class="simple">
+<li><p>vztahy pro transportní veličiny</p>
+<ul>
+<li><p>stavové rovnice</p></li>
+<li><p>další vztahy</p></li>
+</ul>
+</li>
+<li><p>konstitutivní vztahy - popisují specifické situace, např.</p>
+<ul>
+<li><p>proudění z povrchu (vztahy s Nu)</p></li>
+<li><p>…</p></li>
+</ul>
+</li>
+<li><p>okrajové podmínky</p>
+<ul>
+<li><p>v případě nestacionárních dějů se počáteční stav může určit např. stacionárním výpočtem</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="dvoufazove-proudeni">
+<h3>Dvoufázové proudění<a class="headerlink" href="#dvoufazove-proudeni" title="Permalink to this heading"></a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}\frac{\partial}{\partial \tau}(\rho_\ell (1-&lt;\alpha&gt;)) + \frac{\partial}{\partial x_i}\left(\rho_\ell w_{\ell,i}(1-&lt;\alpha&gt;)\right) &amp;= \Gamma_\ell \\
+\frac{\partial}{\partial \tau}(\rho_v &lt;\alpha&gt;) + \frac{\partial}{\partial x_i}\left(\rho_v w_{v,i}&lt;\alpha&gt;\right) &amp;= \Gamma_v \\
+TODO
+\end{split}\]</div>
+<ul class="simple">
+<li><p>je potřeba více vztahů – např. konstitutivní vztahy pro výpočet členů <span class="math notranslate nohighlight">\(\Gamma\)</span></p></li>
+</ul>
+</section>
+</section>
+<section id="problemy-s-resenim-proudeni-v-praxi">
+<h2>Problémy s řešením proudění v praxi<a class="headerlink" href="#problemy-s-resenim-proudeni-v-praxi" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>výpočetní prostředky jsou omezené</p>
+<ul>
+<li><p>vztahy je potřeba zjednodušovat (k dosažení rozumné výpočetní náročnosti)</p></li>
+<li><p>typicky se balancuje rychlost výpočtu proti přesnosti (a realističnosti)</p></li>
+</ul>
+</li>
+<li><p>je potřeba zvolit vhodnou metodu</p></li>
+</ul>
+<section id="aspekty-ovlivnujici-vyber-vypocetni-metody">
+<h3>Aspekty ovlivňující výběr výpočetní metody<a class="headerlink" href="#aspekty-ovlivnujici-vyber-vypocetni-metody" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p>geometrie problému</p></li>
+<li><p>probíhající fyzikální jevy</p>
+<ul>
+<li><p>proudění - jednofázové x vícefázové</p></li>
+<li><p>fázové přeměny</p></li>
+<li><p>chemické reakce</p></li>
+<li><p>rychlost změn - velikost časového kroku musí být dostatečně malá</p></li>
+</ul>
+</li>
+<li><p>požadovaná přesnost</p></li>
+<li><p>nároky na HW a rychlost výpočtu</p>
+<ul>
+<li><p>souvisí s aplikací</p>
+<ul>
+<li><p>můžeme si dovolit čekat (např. bezpečnostní analýzy), nebo ne (on-line modelování)</p></li>
+<li><p>počet opakování - jen 1 výpočet, nebo více (např. při optimalizaci)</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- (What is the correct word for 'předpoklady') -->
+<ul class="simple">
+<li><p>předpoklady výpočtu</p>
+<ul>
+<li><p>konzervativní nebo best-estimate?</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="priklady-metod-vypocet-aktivni-zony">
+<h3>Příklady metod – výpočet aktivní zóny<a class="headerlink" href="#priklady-metod-vypocet-aktivni-zony" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p>kanálová zóna – k příčnému mísení nedochází (RBMK, GCR,…) - lze aproximovat 1D výpočtem</p></li>
+<li><p>kazetové palivové soubory s obálkou (např. BWR, VVER-440,…) - přetoky mezi PS nejsou, ale chceme uvažovat přenos energie</p>
+<ul>
+<li><p>subkanálová analýza funguje dobře</p></li>
+</ul>
+</li>
+<li><p>příčné přetoky existují (např. VVER-1000) - složitější</p></li>
+</ul>
+</section>
+</section>
+<section id="metody-reseni">
+<h2>Metody řešení<a class="headerlink" href="#metody-reseni" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>CFD</p>
+<ul>
+<li><p>univerzální, široce rozšířené v praxi</p></li>
+<li><p>nejblíže skutečnému řešení, ale typicky používá zjednodušené modely (např. RANS, LES v modelování turbulence)</p></li>
+<li><p>velká náročnost na výpočetní prostředky</p></li>
+<li><p>Př: ANSYS Fluent, Siemens StarCCM+, OpenFOAM,…</p></li>
+</ul>
+</li>
+<li><p>subkanálová analýza</p>
+<ul>
+<li><p>předpoklad: proudění v axiálním směru je dominantní, ale existují příčné přetoky</p>
+<ul>
+<li><p>rovnice se přepíší do 1D tvaru s členy pro příčné přetoky</p></li>
+<li><p>„mezi 1D a 2D“</p></li>
+</ul>
+</li>
+<li><p>potřebuje více konstitutivních vztahů</p></li>
+<li><p>dnes používané jen ve výpočtech aktivních zón</p></li>
+<li><p>Př: Cobra, Altham, Subchanflow</p></li>
+</ul>
+</li>
+<li><p>metoda náhradního média</p>
+<ul>
+<li><p>původní složitá geometrie se nahradí jednodušší „náhradní“ úlohou</p></li>
+</ul>
+</li>
+<li><p>systémové (integrální) kódy</p>
+<ul>
+<li><p>rovnice jsou integrované přes objem, výpočetní oblast se „nodalizuje“</p></li>
+<li><p>časté v havarijních analýzách</p></li>
+<li><p>typicky vhodné i pro velké oblasti jako celá smyčka nebo celý primární okruh</p></li>
+<li><p>při velkém množství nodů je srovnatelné se subkanálovou analýzou či dokonce s CFD</p></li>
+<li><p>Př: RELAP, ATHLET, MELCOR, TRACE</p></li>
+</ul>
+</li>
+<li><p>metoda izolovaného kanálu</p></li>
+<li><p>code coupling</p>
+<ul>
+<li><p>spojování více různých kódů do složitějších celků</p></li>
+<li><p>specifické pro daný typ úlohy</p></li>
+<li><p>časté pro propojení termohydraulických a neutronických výpočtů</p></li>
+<li><p>Př: RELAP + neutronika, ATHLET + neutronika, DYN3D, TRACE + PARCS, OpenFOAM + Serpent,…</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="pdf_link.html" class="btn btn-neutral float-left" title="PDF verze" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="prednaska_23092022.html" class="btn btn-neutral float-right" title="CFD" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Matej Rzehulka.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

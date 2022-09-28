@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="cs" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CFD &mdash; Dokumentace pro thar 0.1</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/dark_mode_css/general.css" type="text/css" />
+      <link rel="stylesheet" href="_static/dark_mode_css/dark.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/translations.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="_static/dark_mode_js/default_light.js"></script>
+        <script src="_static/dark_mode_js/theme_switcher.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Rejstřík" href="genindex.html" />
+    <link rel="search" title="Vyhledávání" href="search.html" />
+    <link rel="next" title="Instalace balíku ANSYS Fluent" href="instalace_fluentu.html" />
+    <link rel="prev" title="Úvod" href="prednaska_19092022.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> thar
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">PDF verze:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pdf_link.html">PDF verze</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Přednášky:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="prednaska_19092022.html">Úvod</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">CFD</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#principy-modelovani">Principy modelování</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#postup">Postup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#chyby">Chyby</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tvorba-geometrie">Tvorba geometrie</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pristupy-ke-geometrii">Přístupy ke geometrii</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#diskretizace-geometrie">Diskretizace geometrie</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#prvky">Prvky</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pozadavky-na-sit">Požadavky na síť</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#typy-siti">Typy sítí</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#posuzovani-kvality-site">Posuzování kvality sítě</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Cvičení:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="instalace_fluentu.html">Instalace balíku ANSYS Fluent</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">thar</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>CFD</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/rzehumat/kjr_thar/blob/master/prednaska_23092022.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="cfd">
+<h1>CFD<a class="headerlink" href="#cfd" title="Permalink to this heading"></a></h1>
+<section id="principy-modelovani">
+<h2>Principy modelování<a class="headerlink" href="#principy-modelovani" title="Permalink to this heading"></a></h2>
+<p><em>CFD = Computational Fluid Dynamics</em></p>
+<ul class="simple">
+<li><p>řešení diferenciálních rovnic (ZZ hmoty - rovnice kontinuity, hybnosti - Navier-Stokesovy rovnice, energie)</p></li>
+</ul>
+<p>Obecně výpočet probíhá ve 2 krocích:</p>
+<ol class="arabic simple">
+<li><p>Diskretizace definičního oboru (<span class="math notranslate nohighlight">\(\vec{x}, t\)</span>)</p>
+<ul class="simple">
+<li><p>různé metody (FVM, FEM, …)</p></li>
+</ul>
+</li>
+<li><p>Iterační řešení systému algebraických rovnic</p></li>
+</ol>
+</section>
+<section id="postup">
+<h2>Postup<a class="headerlink" href="#postup" title="Permalink to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Pre-processing</p>
+<ul class="simple">
+<li><p>definice geometrie</p></li>
+<li><p>generace výpočetní sítě (mesh) - prostorová, časová</p></li>
+<li><p>volba modelů (turbulence, fyzikální a chemické procesy,…)</p>
+<ul>
+<li><p>záleží na požadované přesnosti (a dostupném hardwaru)</p></li>
+<li><p>další faktory - počt fází, přenos energie,…</p></li>
+</ul>
+</li>
+<li><p>termofyzikální vlastnosti materiálů (hustota, viskozita,…)</p>
+<ul>
+<li><p>zadané jako konstanty, tabulka hodnot nebo funkce</p></li>
+</ul>
+</li>
+<li><p>hraniční (popř. i počáteční) podmínky</p>
+<ul>
+<li><p>vstup, výstup, stěny,…</p></li>
+<li><p>v případě nestacionárních úloh se často používá řešení stacionární úlohy jako počáteční podmínka</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Výpočet</p>
+<ul class="simple">
+<li><p>nejsnažší část - pracuje počítač</p></li>
+<li><p>vyplatí se sledovat konvergenci – např. zkontrolovat, že residua klesají</p></li>
+</ul>
+</li>
+<li><p>Post-processing</p>
+<ul class="simple">
+<li><p>kontrola, že výsledky dávají smysl</p></li>
+<li><p>analýza konvergence</p>
+<ul>
+<li><p>zkontrolovat, že další iterace už nemění výsledek</p></li>
+<li><p>ověřit vliv sítě (meshe) na výsledek</p>
+<ul>
+<li><p>provést výpočet na jemnějším meshi a porovnat výsledky</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>zpracování výsledků do požadovaného formátu</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="chyby">
+<h2>Chyby<a class="headerlink" href="#chyby" title="Permalink to this heading"></a></h2>
+<ol class="arabic">
+<li><p><strong>Numerické</strong></p>
+<ol class="arabic simple">
+<li><p>Diskretizační</p></li>
+</ol>
+<p>Souvisí s náhradou derivace diferenčním schématem:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\frac{\partial u}{\partial x} &amp;\approx \frac{u(x+h) - u(x)}{h} + \mathcal{O}(h) \\
+\frac{\partial u}{\partial x} &amp;\approx \frac{u(x) - u(x-h)}{h} + \mathcal{O}(h) \\
+\frac{\partial u}{\partial x} &amp;\approx \frac{u(x+0.5h) - u(x-0.5h)}{h} + \mathcal{O}(h^2)\end{split}\]</div>
+<p>Odhad velikosti diskretizační chyby – porovnat výpočty na různých sítích.</p>
+<ol class="arabic" start="2">
+<li><p>Zaokrouhlovací</p>
+<p>Souvisí s reprezentací reálných čísel v počítači (<code class="docutils literal notranslate"><span class="pre">float</span></code>, <code class="docutils literal notranslate"><span class="pre">double</span></code>).</p>
+<p>Diskretizační a zaokrouhlovací chyby jdou proti sobě:</p>
+<ul class="simple">
+<li><p>snížení diskretizační chyby vede k většímu počtu výpočtů, což může vést k větší zaokrouhlovací chybě (záleží však na typu úlohy, stabilitě schématu,…)</p></li>
+</ul>
+</li>
+<li><p>Chyba konvergence</p></li>
+</ol>
+<ul class="simple">
+<li><p>výpočet různých veličin (rychlosti, teploty,…) konverguje různě rychle</p></li>
+<li><p>pro kontrolu stačí sledovat např. velikost residua v závislosti na iteraci</p></li>
+<li><p>souvisí s iteračním schématem (typem a hyperparametry) pro řešení maticové úlohy</p></li>
+</ul>
+<ol class="arabic simple" start="4">
+<li><p>Chyba diskretizace fyzikálního modelu</p></li>
+</ol>
+<ul class="simple">
+<li><p>souvisí se zadáním a modelovacími chybami</p></li>
+<li><p>TODO</p></li>
+</ul>
+</li>
+<li><p><strong>Modelovací</strong></p>
+<ol class="arabic simple">
+<li><p>Příliš zjednodušená geometrie</p></li>
+</ol>
+<ul class="simple">
+<li><p>např. špatné použití symetrie nebo zanedbání malé oblasti</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p>Fyzikální modely</p></li>
+</ol>
+<ul>
+<li><p>souvisí s modelováním fyzikálních procesů</p></li>
+<li><p>např. volba modelu turbulence</p>
+<ul class="simple">
+<li><p>RANS je rychlé, ale dělá značná zjednodušení</p></li>
+<li><p>LES řeší některé struktury v proudění, malé struktury pak modeluje; více náročné na HW než RANS, méně než LES</p></li>
+<li><p>DNS řeší přímo Navier-Stokesovy rovnice, ale je vysoce náročné na HW</p></li>
+</ul>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="text-center head"><p><img alt="Obrázek - Srovnání RANS, LES a DNS" src="_images/rans_les_dns.png" /></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>Vlevo: Srovnání DNS (a), LES (b) a RANS (c) simulace proudění z trysky (Italian Agency For New Energy Technologies 2006). Vpravo: Schematické znázornění rozdílu mezi RANS, LES and DNS modelováním (Deck et al. 2014). Převzato z ResearchGate, příspěvek uživatele Alwin Hopf, přeloženo. Originál viz https://www.researchgate.net/figure/Left-Comparison-of-a-DNS-a-LES-b-and-RANS-c-simulation-of-a-jet-flow-Italian_fig1_330765625</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>stlačitelnost tekutin – často se aproximují jako nestlačitelné - ale to není použitelné vždy</p></li>
+<li><p>potřeba předem odhadnout, co je použitelné (např. <span class="math notranslate nohighlight">\(v \ll c\)</span>, kde <span class="math notranslate nohighlight">\(c\)</span> je rychlost zvuku, pak aproximace nestlačitelné tekutiny lze použít)</p></li>
+</ul>
+</li>
+</ul>
+<ol class="arabic simple" start="3">
+<li><p>Termofyzikální vlastnosti</p></li>
+</ol>
+<ul class="simple">
+<li><p>často aproximujeme konstantami, ale někdy je potřeba poskytnout závislost <span class="math notranslate nohighlight">\(x(\rho)\)</span> nebo <span class="math notranslate nohighlight">\(x(T)\)</span></p></li>
+<li><p>např. přirozená konvekce</p></li>
+</ul>
+<ol class="arabic simple" start="4">
+<li><p>Hraniční podmínky</p></li>
+<li><p>Počáteční podmínky</p></li>
+<li><p>Uživatelské funkce</p></li>
+<li><p>Fázové přechody</p></li>
+</ol>
+</li>
+</ol>
+</section>
+<section id="tvorba-geometrie">
+<h2>Tvorba geometrie<a class="headerlink" href="#tvorba-geometrie" title="Permalink to this heading"></a></h2>
+<p>2 možnosti:</p>
+<ol class="arabic simple">
+<li><p>Import modelu z CAD (např. <code class="docutils literal notranslate"><span class="pre">stl</span></code> formát)</p></li>
+</ol>
+<ul class="simple">
+<li><p>často zdroj chyb – model se nenaimportuje správně,…</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p>Vlastní SW pro tvorbu geometrie v CFD programu</p></li>
+</ol>
+<ul class="simple">
+<li><p>Odstraňuje problém s importem</p></li>
+<li><p>Modelovací prostředí nemusí nabízet funkcionalitu jako samostatný CAD software</p></li>
+<li><p>2 přístupy k implementaci</p>
+<ul>
+<li><p>centrální - 1 prostředí, kde se pracuje pořád (např. Geostar)</p></li>
+<li><p>samostatné moduly - typické u velkých balíků (např. Ansys)</p></li>
+</ul>
+</li>
+</ul>
+<section id="pristupy-ke-geometrii">
+<h3>Přístupy ke geometrii<a class="headerlink" href="#pristupy-ke-geometrii" title="Permalink to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>CLI (<em>command line interface</em>) + náhled</p></li>
+</ol>
+<ul class="simple">
+<li><p>expert-friendly</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p>myš + ikony</p></li>
+<li><p>od nejmenších modelů
+- křivky -&gt; plochy -&gt; objemy
+- nejdřív geometrie, pak síť</p></li>
+<li><p>od sítě
+- deformace apod.
+- typické pro starší SW</p></li>
+</ol>
+</section>
+</section>
+<section id="diskretizace-geometrie">
+<h2>Diskretizace geometrie<a class="headerlink" href="#diskretizace-geometrie" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>v CFD může mít velký vliv na výsledek (v pevnostních výpočtech spíš menší)</p></li>
+</ul>
+<section id="prvky">
+<h3>Prvky<a class="headerlink" href="#prvky" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p>dle dimenzionality:</p>
+<ul>
+<li><p>1D</p>
+<ul>
+<li><p>úsečka / křivka</p></li>
+<li><p>obsahuje &gt;= 2 nody (2 - úsečka, 3 - quadratic curve, 4 - cubic curve)</p></li>
+</ul>
+</li>
+<li><p>2D</p>
+<ul>
+<li><p>trojúhelníky (&gt;= 3 nody), čtyřhrany (&gt;= 4 nody)</p></li>
+<li><p>strana může být křivá (pak potřebuje &gt; 2 nody)</p></li>
+</ul>
+</li>
+<li><p>3D</p>
+<ul>
+<li><p>hexahedron - 6 stěn, &gt;= 8 nodů, nemusí být pravoúhlý</p></li>
+<li><p>hranol (prism)</p></li>
+<li><p>pyramid</p></li>
+<li><p>tetrahedron</p></li>
+<li><p>dodecahedron</p></li>
+<li><p>polyhedra - libovolný tvar (mnohostěn)</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="pozadavky-na-sit">
+<h3>Požadavky na síť<a class="headerlink" href="#pozadavky-na-sit" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p>pokrýt celý objem</p></li>
+<li><p>prvky se nesmí překrývat</p>
+<ul>
+<li><p>výjimka - síť typu „chiméra“ - překryv je úmyslný</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="typy-siti">
+<h3>Typy sítí<a class="headerlink" href="#typy-siti" title="Permalink to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Strukturované = pravidelné</p>
+<ul class="simple">
+<li><p>typ H - každý nód obklopen stejným množstvím prvků</p></li>
+<li><p>typ O - okolo kruhových těles - radiální</p></li>
+<li><p>typ C - kulaté + ostrý bod - např. křídla</p></li>
+<li><p>obecně jednodušší na výpočet - vede na řešení úlohy s pásovou maticí</p></li>
+</ul>
+</li>
+<li><p>Nestrukturované = nepravidelné</p>
+<ul class="simple">
+<li><p>složitější (horší indexování kvůli nepravidelnostem) -&gt; náročnější</p></li>
+<li><p>dnes preferováno – dává elementy tam, kde je potřeba lepší rozlišení (oblasti s ostrými gradienty)</p></li>
+</ul>
+</li>
+</ol>
+<ul class="simple">
+<li><p>při použití několika různých sítí je potřeba řešit napojení</p>
+<ul>
+<li><p>konformní - sítě se napojují</p></li>
+<li><p>nekonformní - nody nesousedí</p></li>
+<li><p>rozhraní 2 sítí může být zdrojem chyb</p></li>
+</ul>
+</li>
+<li><p>Speciální</p>
+<ul>
+<li><p>rotující mříže – pro čerpadla a jiné pohyblivé části</p></li>
+<li><p>dynamické – pohybuje se</p></li>
+<li><p>dynamic refinement – zhušťuje se podle potřeby</p>
+<ul>
+<li><p>problém – jak správně zvolit kritérium pro zhuštění</p></li>
+<li><p>použití např. pro dvoufázové proudění – zjemnění sítě poblíž fázového rozhraní</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="posuzovani-kvality-site">
+<h3>Posuzování kvality sítě<a class="headerlink" href="#posuzovani-kvality-site" title="Permalink to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>hustota sítě</p></li>
+</ol>
+<ul class="simple">
+<li><p>balancování HW náročnosti proti přesnosti</p></li>
+<li><p>doporučuje se provést výpočet na 2 různě hustých sítích a sledovat konvergenci hodnot</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p>parametry prvků</p></li>
+<li><p>poměr stran
+- optimálně blízko 1 (tj. prvky nejsou příliš roztáhnuté v 1 dimenzi
+- výjimka - prismatické prvky pro rozlišení mezní vrstvy</p></li>
+<li><p>šikmost (skewness) - zkosení</p></li>
+<li><p>ortogonalita</p></li>
+</ol>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="prednaska_19092022.html" class="btn btn-neutral float-left" title="Úvod" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="instalace_fluentu.html" class="btn btn-neutral float-right" title="Instalace balíku ANSYS Fluent" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Matej Rzehulka.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
