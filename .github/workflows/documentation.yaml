@@ -11,9 +11,11 @@ jobs:
         run: |
           pip install sphinx sphinx_rtd_theme sphinx-rtd-dark-mode myst_parser
       - name: Sphinx build
-        run: |
-          make latexpdf
-          sphinx-build . _build
+      - uses: ammaraskar/sphinx-action@master
+        with:
+          docs-folder: "."
+          pre-build-command: "apt-get update -y && apt-get install -y latexmk texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended"
+          build-command: "make latexpdf && sphinx-build . _build"
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
