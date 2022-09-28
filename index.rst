@@ -24,4 +24,6 @@
    :maxdepth: 2
    :caption: Cvičení:
 
+   instalace_fluentu.md
+
 
