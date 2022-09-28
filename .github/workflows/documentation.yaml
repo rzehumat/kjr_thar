@@ -9,7 +9,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install sphinx sphinx_rtd_theme sphinx-rtd-dark-mode myst_parser
-          apt-get update -y && apt-get install -y latexmk texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended
+          sudo apt-get update && sudo apt-get install latexmk texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended
       - name: Build Sphinx
         run: |
           make latexpdf
