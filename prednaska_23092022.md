@@ -90,5 +90,88 @@ Obecně výpočet probíhá ve 2 krocích:
 
 
 ## Tvorba geometrie
+2 možnosti:
 
-foo
+1. Import modelu z CAD (např. `stl` formát)
+  - často zdroj chyb -- model se nenaimportuje správně,...
+2. Vlastní SW pro tvorbu geometrie v CFD programu
+  - Odstraňuje problém s importem
+  - Modelovací prostředí nemusí nabízet funkcionalitu jako samostatný CAD software
+  - 2 přístupy k implementaci
+    - centrální - 1 prostředí, kde se pracuje pořád (např. Geostar)
+    - samostatné moduly - typické u velkých balíků (např. Ansys)
+
+### Přístupy ke geometrii
+1. CLI (*command line interface*) + náhled 
+  - expert-friendly
+2. myš + ikony
+  1. od nejmenších modelů
+    - křivky -> plochy -> objemy
+    - nejdřív geometrie, pak síť
+  2. od sítě 
+    - deformace apod.
+    - typické pro starší SW
+
+
+## Diskretizace geometrie
+- v CFD může mít velký vliv na výsledek (v pevnostních výpočtech spíš menší)
+
+### Prvky 
+- dle dimenzionality:
+  - 1D
+      - úsečka / křivka
+      - obsahuje >= 2 nody (2 - úsečka, 3 - quadratic curve, 4 - cubic curve)
+  - 2D
+      - trojúhelníky (>= 3 nody), čtyřhrany (>= 4 nody)
+      - strana může být křivá (pak potřebuje > 2 nody)
+  - 3D 
+      - hexahedron - 6 stěn, >= 8 nodů, nemusí být pravoúhlý
+      - hranol (prism)
+      - pyramid
+      - tetrahedron
+      - dodecahedron
+      - polyhedra - libovolný tvar (mnohostěn)
+
+
+### Požadavky na síť
+- pokrýt celý objem
+- prvky se nesmí překrývat
+  - výjimka - síť typu "chiméra" - překryv je úmyslný
+
+
+### Typy sítí
+1. Strukturované = pravidelné
+    - typ H - každý nód obklopen stejným množstvím prvků
+    - typ O - okolo kruhových těles - radiální
+    - typ C - kulaté + ostrý bod - např. křídla
+    - obecně jednodušší na výpočet - vede na řešení úlohy s pásovou maticí
+
+2. Nestrukturované = nepravidelné
+    - složitější (horší indexování kvůli nepravidelnostem) -> náročnější
+    - dnes preferováno -- dává elementy tam, kde je potřeba lepší rozlišení (oblasti s ostrými gradienty)
+
+- při použití několika různých sítí je potřeba řešit napojení
+  - konformní - sítě se napojují
+  - nekonformní - nody nesousedí
+  - rozhraní 2 sítí může být zdrojem chyb
+
+
+- Speciální
+  - rotující mříže -- pro čerpadla a jiné pohyblivé části
+   - dynamické -- pohybuje se
+  - dynamic refinement -- zhušťuje se podle potřeby
+    - problém -- jak správně zvolit kritérium pro zhuštění
+    - použití např. pro dvoufázové proudění -- zjemnění sítě poblíž fázového rozhraní
+
+
+### Posuzování kvality sítě
+1. hustota sítě
+  - balancování HW náročnosti proti přesnosti
+  - doporučuje se provést výpočet na 2 různě hustých sítích a sledovat konvergenci hodnot
+
+2. parametry prvků
+  1. poměr stran
+    - optimálně blízko 1 (tj. prvky nejsou příliš roztáhnuté v 1 dimenzi
+    - výjimka - prismatické prvky pro rozlišení mezní vrstvy
+  2. šikmost (skewness) - zkosení
+  3. ortogonalita
