@@ -6,7 +6,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
-      - uses: xu-cheng/latex-action@v2
       - name: Install dependencies
         run: |
           pip install sphinx sphinx_rtd_theme sphinx-rtd-dark-mode myst_parser
