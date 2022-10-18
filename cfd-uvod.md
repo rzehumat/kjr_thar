@@ -178,3 +178,15 @@ Obecně výpočet probíhá ve 2 krocích:
     - výjimka - prismatické prvky pro rozlišení mezní vrstvy
   2. šikmost (skewness) - zkosení
   3. ortogonalita
+ 
+
+## Převod diferenciálních rovnic
+1. Metoda sítí (*finite difference method, FDM*)
+2. Metoda konečných objemů (*finite volume method, FVM*)
+3. Metoda konečných prvků (*finite element method, FEM*)
+
+**méně univerzální:**
+4. Metoda spektrálních elementů
+5. Úprava polynomů
+6. Integrální metody
+7. Boltzmannova mřížková metoda (*lattice Boltzmann method, LBM*)

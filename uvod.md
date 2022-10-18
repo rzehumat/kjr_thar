@@ -81,14 +81,14 @@ TODO
   - univerzální, široce rozšířené v praxi
   - nejblíže skutečnému řešení, ale typicky používá zjednodušené modely (např. RANS, LES v modelování turbulence)
   - velká náročnost na výpočetní prostředky
-  - Př: ANSYS Fluent, Siemens StarCCM+, OpenFOAM,...
+  - Př: [ANSYS Fluent](https://www.ansys.com/products/fluids/ansys-fluent), [Siemens StarCCM+](https://www.plm.automation.siemens.com/global/pl/products/simcenter/STAR-CCM.html), [OpenFOAM](https://www.openfoam.com/),...
 - subkanálová analýza
   - předpoklad: proudění v axiálním směru je dominantní, ale existují příčné přetoky
     - rovnice se přepíší do 1D tvaru s členy pro příčné přetoky
     - "mezi 1D a 2D"
   - potřebuje více konstitutivních vztahů
   - dnes používané jen ve výpočtech aktivních zón
-  - Př: Cobra, Altham, Subchanflow
+  - Př: Cobra, Altham, [Subchanflow](https://www.inr.kit.edu/english/1008.php)
 - metoda náhradního média
   - původní složitá geometrie se nahradí jednodušší "náhradní" úlohou
 - systémové (integrální) kódy
@@ -96,10 +96,10 @@ TODO
   - časté v havarijních analýzách
   - typicky vhodné i pro velké oblasti jako celá smyčka nebo celý primární okruh
   - při velkém množství nodů je srovnatelné se subkanálovou analýzou či dokonce s CFD
-  - Př: RELAP, ATHLET, MELCOR, TRACE
+  - Př: [RELAP](https://relap7.inl.gov/SitePages/Overview.aspx), ATHLET, [MELCOR](https://energy.sandia.gov/programs/nuclear-energy/nuclear-energy-safety-security/melcor/), TRACE
 - metoda izolovaného kanálu
 - code coupling
   - spojování více různých kódů do složitějších celků
   - specifické pro daný typ úlohy
   - časté pro propojení termohydraulických a neutronických výpočtů
-  - Př: RELAP + neutronika, ATHLET + neutronika, DYN3D, TRACE + PARCS, OpenFOAM + Serpent,...
+  - Př: RELAP + neutronika, ATHLET + neutronika, [DYN3D](https://www.hzdr.de/db/Cms?pOid=11771&pNid=542), [TRACE + PARCS](https://doi.org/10.1016/j.anucene.2008.12.022), [OpenFOAM + Serpent](https://publications.vtt.fi/julkaisut/muut/2016/OA-Coupling-serpent-and.pdf),...

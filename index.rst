@@ -17,7 +17,10 @@
    :caption: Přednášky:
 
    uvod.md
-   cfd.md
+   cfd-uvod.md
+   fdm.md
+   fvm.md
+
 
 
 .. toctree::
