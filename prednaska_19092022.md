@@ -23,7 +23,7 @@
 ```
 kde
 ```{math}
-    \frac{\partial \tau_{ij}}{\partial x_j} &= \frac{\partial}{\partial x_j}\left[\eta\left(\frac{\partial w_i}{\partial x_j} + \frac{\partial w_j}{\partial x_i} - \frac{2}{3}\delta_{ij}\frac{\partial w_k}{\partial x_k}\right) + \xi \delta_{ij}\frac{\partial w_k}{\partial x_k}\right] \\
+    \pder{\tau_{ij}}{x_j} &= \pder{}{x_j}\left[\eta\left(\pder{w_i}{x_j} + \pder{w_j}{x_i} - \frac{2}{3}\delta_{ij}\pder{w_k}{x_k}\right) + \xi \delta_{ij}\pder{w_k}{x_k}\right] \\
 ```
 
 Dále je potřeba dodat 
@@ -40,8 +40,8 @@ Dále je potřeba dodat
 ### Dvoufázové proudění
 
 ```{math}
-\frac{\partial}{\partial \tau}(\rho_\ell (1-<\alpha>)) + \frac{\partial}{\partial x_i}\left(\rho_\ell w_{\ell,i}(1-<\alpha>)\right) &= \Gamma_\ell \\
-\frac{\partial}{\partial \tau}(\rho_v <\alpha>) + \frac{\partial}{\partial x_i}\left(\rho_v w_{v,i}<\alpha>\right) &= \Gamma_v \\
+\pder{}{\tau}(\rho_\ell (1-<\alpha>)) + \pder{}{x_i}\left(\rho_\ell w_{\ell,i}(1-<\alpha>)\right) &= \Gamma_\ell \\
+\pder{}{\tau}(\rho_v <\alpha>) + \pder{}{x_i}\left(\rho_v w_{v,i}<\alpha>\right) &= \Gamma_v \\
 TODO
 
 ```

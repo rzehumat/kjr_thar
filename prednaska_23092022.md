@@ -39,9 +39,12 @@ Obecně výpočet probíhá ve 2 krocích:
 
     Souvisí s náhradou derivace diferenčním schématem:
     ```{math}
-    \frac{\partial u}{\partial x} &\approx \frac{u(x+h) - u(x)}{h} + \mathcal{O}(h) \\
-    \frac{\partial u}{\partial x} &\approx \frac{u(x) - u(x-h)}{h} + \mathcal{O}(h) \\
-    \frac{\partial u}{\partial x} &\approx \frac{u(x+0.5h) - u(x-0.5h)}{h} + \mathcal{O}(h^2)
+    \newcommand{\pder}[2]{
+        \frac{\partial #1}{\partial #2}
+    }
+    \pder{u}{x} &\approx \frac{u(x+h) - u(x)}{h} + \mathcal{O}(h) \\
+    \pder{u}{x} &\approx \frac{u(x) - u(x-h)}{h} + \mathcal{O}(h) \\
+    \pder{u}{x} &\approx \frac{u(x+0.5h) - u(x-0.5h)}{h} + \mathcal{O}(h^2)
     ```
 
     Odhad velikosti diskretizační chyby -- porovnat výpočty na různých sítích.
