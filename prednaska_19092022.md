@@ -13,9 +13,12 @@
 - tedy potřebujeme 5 rovnic (níže jsou rovnice kontinuity, Navier-Stokesovy rovnice -- ve formulaci pro stlačitelné Newtonovské tekutiny a zákon zachování energie)
 
 ```{math}
-    \frac{\partial \rho}{\partial \tau} + \frac{\partial (\rho w_i)}{\partial x_i} &= 0 \\
-    \frac{\partial (\rho w_i)}{\partial \tau} + \frac{\partial w_i}{\partial x_j}(\rho w_j) &= \rho K_i - \frac{\partial p}{\partial x_i} + \frac{\tau_{ij}}{\partial x_j} \\
-    \frac{\partial (\rho h)}{\partial \tau} + \frac{\partial (\rho h w_j)}{\partial x_j} &= \frac{\partial p}{\partial \tau} + w_j \frac{\partial p}{\partial x_j} + \frac{\partial}{\partial x_i}\left(\lambda \frac{\partial T}{\partial x_i}\right) + \tau_{ij} \frac{\partial w_i}{\partial x_j} + K_i \rho w_i + q_V - \frac{\partial q_{r,i}}{\partial x_j}
+    \newcommand{\pder}[2]{
+        \frac{\partial #1}{\partial #2}
+    }
+    \pder{\rho}{\tau} + \pder{\rho w_i}{x_i} &= 0 \\
+    \pder{\rho w_i}{\tau} + \pder{w_i}{x_j}(\rho w_j) &= \rho K_i - \pder{p}{x_i} + \pder{\tau_{ij}}{x_j} \\
+    \pder{(\rho h)}{\tau} + \pder{(\rho h w_j)}{x_j} &= \pder{p}{\tau} + w_j \pder{p}{x_j} + \pder{}{x_i}\left(\lambda \pder{T}{x_i}\right) + \tau_{ij} \pder{w_i}{x_j} + K_i \rho w_i + q_V - \pder{q_{r,i}}{x_j}
 
 ```
 kde
