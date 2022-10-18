@@ -4,6 +4,14 @@
 **Příklad - uniformní síť:**
 
 ```{math}
+    \newcommand{\pder}[2]{
+        \frac{\partial #1}{\partial #2}
+    }
+    \newcommand{\ppder}[2]{
+        \frac{\partial^2 #1}{\partial #2^2}
+    }
+    \pder{\rho}{\tau} + \pder{\rho w_i}{x_i} &= 0 \\
+    \pder{\rho}{\tau} + \pder{\rho w_i}{x_i} &= 0 \\
     \left(\pder{f}{x}\right)_i = \frac{f_{i+1} - f_{i-1}}{2\Delta x} + \mathcal{O} \\
     \left(\ppder{f}{x}\right)_i \approx \frac{f_{i+1} - 2f_i + f_{i-1}}{\Delta x^2} + \mathcal{O}
 ```
